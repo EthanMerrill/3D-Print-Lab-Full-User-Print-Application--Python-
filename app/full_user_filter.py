@@ -5,7 +5,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 import re
 import json
-import globals
+import getpass
+import time
+#import globals
+
+# ##Will put chrome driver in the path automatically in the future
+# if getattr(sys, 'frozen', False) :
+#     # running in a bundle
+#     chromedriver_path = os.path.join(sys._MEIPASS, 'chromedriver')
 
 def user_auth_check(userKeys):
         #opens a driver in headless mode, attempts to login to 3dpos with passed credentials, reports a boolean of success or failure to login
@@ -40,7 +47,7 @@ class driver_handler() :
         chrome_options.add_argument("--allow-running-insecure-content")
         chrome_options.add_argument("--remote-debugging-port=9222") #http://localhost:9222
         driver = webdriver.Chrome(chrome_options=chrome_options)
-       
+        driver.minimize_window()
         #these might be useful for inserting into an sql table later
         #tazTable = driver.find_element(By.XPATH, "//*[@id='id_box_51246']/span/table")
         #ultiTable = driver.find_element(By.XPATH, "//*[@id='id_box_51247']/span/table")
@@ -73,14 +80,14 @@ class main():
         #print (tazTable[0].text)
         for element in allTableElements:
             #add an if not in statement here to filter 
-            if fullUserEmail in element.text: 
-                print(f"element: {element.text} not removed from page")
-            else:
-                print (f"{element.text} removed from page")
+            if fullUserEmail not in element.text: 
+                #####print(f"element: {element.text} not removed from page")
+                #print (f"{element.text} removed from page")
                 driver.execute_script(
                     "arguments[0].remove();", element
                 )
-
+        return driver
+        
 
 if __name__ == "__main__":
     #get user Credentials:
@@ -89,7 +96,7 @@ if __name__ == "__main__":
     while True:
         userCredentials = {
         "username" : input("Username (WPI Email): "),
-        "password" : input("Password: ")
+        "password" : getpass.getpass()
         }   
         if user_auth_check(userCredentials) == True :
             print("user Credentials Correct")
@@ -114,9 +121,23 @@ if __name__ == "__main__":
     #ultimaker xpath table: //*[@id="id_box_51247"]/span/table/tbody
     #ultimaker paid jobs table: //*[@id="id_box_59967"]/span/table/tbody
 
+
+    # new
+    # taz table //*[@id="id_box_51246"]/span/table/tbody
+    
+    #clean Admin view
+    driver.execute_script(
+    "arguments[0].remove();", driver.find_element_by_xpath('//*[@id="header"]/div')
+    )
+
     #clear tables
 
     main.table_filter(driver, '//*[@id="id_box_51246"]/span/table/tbody',userCredentials["username"])
     main.table_filter(driver, '//*[@id="id_box_59968"]/span/table/tbody',userCredentials["username"])
     main.table_filter(driver, '//*[@id="id_box_51247"]/span/table/tbody',userCredentials["username"])
     main.table_filter(driver, '//*[@id="id_box_59967"]/span/table/tbody',userCredentials["username"])
+    driver.fullscreen_window()
+    time.sleep(300)
+    
+    
+    #driver.maximize_window()
