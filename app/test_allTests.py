@@ -4,6 +4,13 @@ import full_user_filter
 import time
 
 class Test_TestMain(unittest.TestCase):
+    def test_user_login(self):
+        with open("app\keys.json", "r") as read_file:
+            adminKeys = json.load(read_file)
+        driverHandler = full_user_filter.driver_handler()
+        driver = driverHandler.initializeListener()
+        print(full_user_filter.user_auth_check(driver, "some Text"))
+
     def test_main(self):
         with open("app\keys.json", "r") as read_file:
             adminKeys = json.load(read_file)
