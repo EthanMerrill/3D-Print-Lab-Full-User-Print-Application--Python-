@@ -21,9 +21,6 @@ import pymsgbox
 #     chromedriver_path = os.path.join(sys._MEIPASS, 'chromedriver')
 
 
-
-
-
 def user_auth_check(driver, customText):
     
         #Opens 3dpos login page, checks for login success, scrapes and returns username 
@@ -33,9 +30,9 @@ def user_auth_check(driver, customText):
         #insert a the passed label into the page so the user knows that this is the user or admin login
         #get the logo element
         try :
-            logoElement = driver.find_element_by_xpath("//*[@id='menuitem_user']/a") 
-        except: 
             logoElement = driver.find_element_by_xpath("//*[@id='wrapper']/a/h1")
+        except: 
+            logoElement = driver.find_element_by_xpath("//*[@id='menuitem_user']/a") 
         else: print("logo not found")
         #executes javascript which modifies the page to place the passed label on the login page
         driver.execute_script (
@@ -52,8 +49,9 @@ def user_auth_check(driver, customText):
             if driver.current_url == 'https://cloud.3dprinteros.com/myfiles/#':
                 usernameElement = driver.find_element_by_xpath("//*[@id='menuitem_user']/a")
                 username = usernameElement.get_attribute('innerText')
-                driver.quit
-                return username
+                #driver.quit
+                usernameAndDriver = [driver, username]
+                return usernameAndDriver
 
             
 
@@ -80,28 +78,31 @@ def admin_login():
     adminDriver = initializeListener()
     
     adminUsername = "GR-FISPROTOTYPINGLAB@WPI.EDU"
+    #loop to ensure login can continue after another user accidentally logs in
     while True:
-        loginEmail = user_auth_check(adminDriver, "Admin Login")
-        if loginEmail == adminUsername:
-            adminDriver.minimize_window
-            return adminDriver
+        usernameAndDriver = user_auth_check(adminDriver, "Admin Login")
+        if adminUsername == usernameAndDriver[1]:
+            usernameAndDriver[0].minimize_window
+            return usernameAndDriver[0]
         else:
-            print("failed admin Login. Please login with the {} account, not {}", adminUsername, loginEmail)
+            print("failed admin Login. Please login with the {} account, not {}", adminUsername, usernameAndDriver[1])
 
 
 def user_login():
     userDriver = initializeListener()
-    userName = user_auth_check(userDriver, "Student Login")
-    userDriver.quit()
-    return userName
+    usernameAndDriver = user_auth_check(userDriver, "Student Login")
+    usernameAndDriver[0].quit()
+    return usernameAndDriver[1]
 
 def clear_all_tables(driver, fullUserEmail):
-    driver.fullscreen_window()
+    
     driver.get("https://cloud.3dprinteros.com/printing/")
+    driver.
     table_filter(driver, '//*[@id="id_box_51246"]/span/table/tbody', fullUserEmail)
     table_filter(driver, '//*[@id="id_box_59968"]/span/table/tbody', fullUserEmail)
     table_filter(driver, '//*[@id="id_box_51247"]/span/table/tbody', fullUserEmail)
     driver = table_filter(driver, '//*[@id="id_box_59967"]/span/table/tbody', fullUserEmail)
+    driver.fullscreen_window()
     return driver 
 
 def table_filter( driver, xpath, fullUserEmail):
@@ -145,7 +146,6 @@ if __name__ == "__main__":
     # t1 = threading.Thread(target=admin_login())
     # t2 = threading.Thread(target=user_login())
     
-    
     # #start thread1
     # t1.start()
     # #start thread2
@@ -159,10 +159,10 @@ if __name__ == "__main__":
 
     while True:
         try:
-            main_function(admin_login)
+            main_function(adminDriver)
         except:
             adminDriver = admin_login()
-            main_function(admin_login)
+            #main_function(admin_login)
 
     
 
