@@ -41,7 +41,7 @@ def user_auth_check(driver, customText):
             arguments[0].setAttribute('style', 'font: 50px arial');
             arguments[0].innerHTML = arguments[1];""", logoElement, customText
         )
-        driver.maximize_window()
+        #
 
         #a loop which checks to see if the user has logged and and been directed to the prints page
         #if so, scrape the userID from the page
@@ -54,15 +54,21 @@ def user_auth_check(driver, customText):
                 return usernameAndDriver
 
             
-
-def initializeListener():
+#set default value of load photos to false
+def initializeListener(loadPhotos = True):
     chrome_options = Options()
     #chrome_options.add_argument("--headless")
     chrome_options.add_argument("--disable-gpu")
+    #disables most logging
     chrome_options.add_argument("--log-level=3")
-    #chrome_options.add_argument("--disable-logging")
     chrome_options.add_argument("--allow-running-insecure-content")
     chrome_options.add_argument("--remote-debugging-port=9222") #http://localhost:9222
+
+    #if specified, do not load images
+    if loadPhotos == False:
+        prefs = {"profile.managed_default_content_settings.images": 2}
+        chrome_options.add_experimental_option("prefs", prefs)
+    #chrome_options.setPageLoadStrategy(PageLoadStrategy.NONE)
     driver = webdriver.Chrome(options=chrome_options)
     driver.minimize_window()
     #these might be useful for inserting into an sql table later
@@ -71,11 +77,10 @@ def initializeListener():
     #print("Taz 6 Queue" +tazTable.text +"/n Ultimaker Table /n" +ultiTable.text)
     return driver
 
-    
 
 def admin_login():
     #this is another thread which runs in parallel
-    adminDriver = initializeListener()
+    adminDriver = initializeListener(False)
     
     adminUsername = "GR-FISPROTOTYPINGLAB@WPI.EDU"
     #loop to ensure login can continue after another user accidentally logs in
@@ -86,21 +91,30 @@ def admin_login():
             return usernameAndDriver[0]
         else:
             print("failed admin Login. Please login with the {} account, not {}", adminUsername, usernameAndDriver[1])
+            #driver.refresh()
 
 
 def user_login():
-    userDriver = initializeListener()
+    userDriver = initializeListener(False)
+    #set window positioning
+    userDriver.set_window_size(300,1080)
+    userDriver.set_window_position(0,0)
     usernameAndDriver = user_auth_check(userDriver, "Student Login")
-    usernameAndDriver[0].quit()
+    #usernameAndDriver[0].quit()
     return usernameAndDriver[1]
 
 def clear_all_tables(driver, fullUserEmail):
     
     driver.get("https://cloud.3dprinteros.com/printing/")
-    driver.
+    element = driver.find_element_by_xpath("//*[@id='header']")
+    driver.execute_script(
+                "arguments[0].remove();", element
+            )
+    table_filter(driver, '//*[@id="id_box_45971"]/span/table/tbody', fullUserEmail)
     table_filter(driver, '//*[@id="id_box_51246"]/span/table/tbody', fullUserEmail)
     table_filter(driver, '//*[@id="id_box_59968"]/span/table/tbody', fullUserEmail)
     table_filter(driver, '//*[@id="id_box_51247"]/span/table/tbody', fullUserEmail)
+    driver.fullscreen_window()
     driver = table_filter(driver, '//*[@id="id_box_59967"]/span/table/tbody', fullUserEmail)
     driver.fullscreen_window()
     return driver 
@@ -135,9 +149,9 @@ def main_function(adminDriver):
      while True:
         userName = user_login()
         clear_all_tables(adminDriver, userName)
-        if  persistent_alert() =='Quit':
-            adminDriver.minimize_window
-            adminDriver.refresh()
+        # if  persistent_alert() =='Quit':
+        #     adminDriver.minimize_window
+        #     adminDriver.refresh()
 
 if __name__ == "__main__":
     #create the driver class
@@ -155,6 +169,7 @@ if __name__ == "__main__":
     
     # t1.join
     # t2.join
+
     adminDriver = admin_login()
 
     while True:

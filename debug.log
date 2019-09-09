@@ -3,3 +3,22 @@
 [0828/115458.536:ERROR:process_info.cc(329)] VirtualQueryEx: Access is denied. (0x5)
 [0828/115458.537:ERROR:process_info.cc(556)] ReadMemoryInfo failed
 [0828/115458.537:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
+[0903/120541.449:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0903/120541.451:ERROR:exception_snapshot_win.cc(98)] thread ID 18404 not found in process
+[0906/130009.465:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0906/130009.467:ERROR:exception_snapshot_win.cc(98)] thread ID 3948 not found in process
+[0906/130221.042:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0906/130221.044:ERROR:exception_snapshot_win.cc(98)] thread ID 12972 not found in process
+[0907/073556.354:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0907/073556.355:ERROR:exception_snapshot_win.cc(98)] thread ID 11448 not found in process
+[0907/073556.521:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0907/073556.521:ERROR:exception_snapshot_win.cc(98)] thread ID 14644 not found in process
+[0907/095748.943:ERROR:file_io_win.cc(161)] CreateFile C:\Users\eth22\AppData\Local\Temp\scoped_dir14896_1126791093\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0907/095748.944:ERROR:file_io_win.cc(170)] CreateFile C:\Users\eth22\AppData\Local\Temp\scoped_dir14896_1126791093\Crashpad\reports\cd54c818-daeb-4107-8958-194961ebea9e.dmp: The system cannot find the path specified. (0x3)
+[0907/095748.944:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0908/183527.668:ERROR:file_io_win.cc(161)] CreateFile C:\Users\eth22\AppData\Local\Temp\scoped_dir16544_764322010\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0908/183527.671:ERROR:file_io_win.cc(170)] CreateFile C:\Users\eth22\AppData\Local\Temp\scoped_dir16544_764322010\Crashpad\reports\5cd3bc79-eb7c-430b-b089-dd0d5bd8aa7f.dmp: The system cannot find the path specified. (0x3)
+[0908/183527.671:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0909/085232.242:ERROR:file_io_win.cc(161)] CreateFile C:\Users\eth22\AppData\Local\Temp\scoped_dir15252_2033888945\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0909/085232.243:ERROR:file_io_win.cc(170)] CreateFile C:\Users\eth22\AppData\Local\Temp\scoped_dir15252_2033888945\Crashpad\reports\b764bf06-fb33-4fda-8fcc-527695a81caa.dmp: The system cannot find the path specified. (0x3)
+[0909/085232.243:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
