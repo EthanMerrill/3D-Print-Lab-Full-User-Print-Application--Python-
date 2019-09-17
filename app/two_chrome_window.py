@@ -3,15 +3,13 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
 import re
 import json
 import getpass
 import time
 import threading
-#native python library
-import ctypes
-#non-native library
-import pymsgbox
+
 
 def user_auth_check(driver, customText, credentialsArray = []):
     
@@ -56,41 +54,58 @@ def check_for_username(driver):
             usernameAndDriver = [driver, username]
             return usernameAndDriver
 
+
 def await_logout(driver):
     #function which monitors the user window until the url has changed to the login window, then continues. 
     while True:
         if driver.current_url == 'https://cloud.3dprinteros.com/':
             return driver
 
+
 def initialize_user_window():
-    userDriver = initialize_driver()
-    #size and position the window appropriately
-    userDriver.set_window_size(300,1030)
-    userDriver.set_window_position(0,0)
-    return userDriver
+    try: 
+        userDriver = initialize_driver()
+        #size and position the window appropriately
+        userDriver.set_window_size(300,1030)
+        userDriver.set_window_position(0,0)
+        return userDriver
+    except Exception as e:
+            print(f"Exception:{e} occured, unable to initialize user window")
+
 
 def initialize_admin_window():
-    adminDriver = initialize_driver()
-    #size and position the window appropriately
-    adminDriver.set_window_size(1420,1030)
-    adminDriver.set_window_position(501,0)
-    return adminDriver
+    try:
+        adminDriver = initialize_driver()
+        #size and position the window appropriately
+        adminDriver.set_window_size(1420,1030)
+        adminDriver.set_window_position(501,0)
+        return adminDriver
+    except Exception as e:
+        print(f"Exception:{e} occured, unable to initialize admin window")
+        input("press enter to exit")
+
 
 def initialize_driver():
-    chrome_options = Options()
-    #chrome_options.add_argument("--headless")
-    chrome_options.add_argument("--disable-gpu")
-    #may fix odd crashing bug
-    chrome_options.add_argument("--no-sandbox")
-    #disables most logging
-    chrome_options.add_argument("--log-level=3")
-    chrome_options.add_argument("--allow-running-insecure-content")
-    #chrome_options.add_argument("--remote-debugging-port=9222") #http://localhost:9222
-    prefs = {"profile.managed_default_content_settings.images": 2}
-    chrome_options.add_experimental_option("prefs", prefs)
-    #chrome_options.setPageLoadStrategy(PageLoadStrategy.NONE)
-    driver = webdriver.Chrome(options=chrome_options)
-    return driver
+    try:
+        chrome_options = Options()
+        #chrome_options.add_argument("--headless")
+        chrome_options.add_argument("--disable-gpu")
+        #may fix odd crashing bug
+        chrome_options.add_argument("--no-sandbox")
+        #disables most logging
+        chrome_options.add_argument("--log-level=3")
+        chrome_options.add_argument("--allow-running-insecure-content")
+        #chrome_options.add_argument("--remote-debugging-port=9222") #http://localhost:9222
+        prefs = {"profile.managed_default_content_settings.images": 2}
+        chrome_options.add_experimental_option("prefs", prefs)
+        #chrome_options.setPageLoadStrategy(PageLoadStrategy.NONE)
+        driver = webdriver.Chrome(executable_path="chromedriver.exe",options=chrome_options)
+        return driver
+
+    except Exception as e:
+        print(f"Exception:{e} occured, unable to initialize chrome")
+        input("press enter to exit")
+
 
 def user_window_to_logout(driver):
     #function modifies the user page to add a large logout button
@@ -133,6 +148,8 @@ def clear_all_tables(driver, fullUserEmail):
         #handles element not found and every other type of error
         except Exception as e:
             print(f"unable to remove {xpath} because {e}")
+            input("press enter to exit")
+
 
     #uses helper function to clear each queue table     
     table_filter(driver, '//*[@id="id_box_45971"]/span/table/tbody', fullUserEmail)
@@ -178,7 +195,7 @@ def wipe_page(driver):
 
 #optional key arguments for testing
 def main(adminkeys = [], studentKeys = []):
-    
+    print("welcome to the Full User Print Application")
     adminDriver = initialize_admin_window()
     userDriver = initialize_user_window()
     #navigate to the prints page in the admin window
@@ -186,15 +203,20 @@ def main(adminkeys = [], studentKeys = []):
     #wait for user authentication
     adminUsernameandDriver = user_auth_check(adminDriver, "Admin Login",adminkeys)    
     #breakout a get username Function Here
+    input("press enter to exit")
     while True:
-        usernameandDriver = user_auth_check(userDriver, "Student Login", studentKeys)
-        clear_all_tables(adminUsernameandDriver[0], usernameandDriver[1])
-        #setup a function that alters the student screen to emphasize the logout function
-        usernameandDriver = check_for_username(usernameandDriver[0])
-        user_window_to_logout(usernameandDriver[0])
-        #Wait for the user to logout
-        usernameandDriver[0] = await_logout(usernameandDriver[0])
-        wipe_page(adminUsernameandDriver[0])
+        try:
+            usernameandDriver = user_auth_check(userDriver, "Student Login", studentKeys)
+            clear_all_tables(adminUsernameandDriver[0], usernameandDriver[1])
+            #setup a function that alters the student screen to emphasize the logout function
+            usernameandDriver = check_for_username(usernameandDriver[0])
+            user_window_to_logout(usernameandDriver[0])
+            #Wait for the user to logout
+            usernameandDriver[0] = await_logout(usernameandDriver[0])
+            wipe_page(adminUsernameandDriver[0])
+        except: 
+            print("program closed. Please restart")
+    input("press enter to exit")
 
 if __name__ == "__main__":
     main()

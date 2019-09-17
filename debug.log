@@ -22,3 +22,5 @@
 [0909/085232.242:ERROR:file_io_win.cc(161)] CreateFile C:\Users\eth22\AppData\Local\Temp\scoped_dir15252_2033888945\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
 [0909/085232.243:ERROR:file_io_win.cc(170)] CreateFile C:\Users\eth22\AppData\Local\Temp\scoped_dir15252_2033888945\Crashpad\reports\b764bf06-fb33-4fda-8fcc-527695a81caa.dmp: The system cannot find the path specified. (0x3)
 [0909/085232.243:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0914/070536.545:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0914/070536.549:ERROR:exception_snapshot_win.cc(98)] thread ID 948 not found in process
