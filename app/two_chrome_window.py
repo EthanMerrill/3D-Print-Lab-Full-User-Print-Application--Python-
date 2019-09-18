@@ -9,6 +9,7 @@ import json
 import getpass
 import time
 import threading
+import sys
 
 
 def user_auth_check(driver, customText, credentialsArray = []):
@@ -36,10 +37,12 @@ def user_auth_check(driver, customText, credentialsArray = []):
         driver.find_element_by_id('signinUsername').send_keys(credentialsArray["username"])
     except:
         print("username not passed")
+        pass
     try:
         driver.find_element_by_id('signinPassword').send_keys(credentialsArray["password"])
     except:
         print("password not passed")
+        pass
     #call the helper function
     return check_for_username(driver)
 
@@ -71,7 +74,7 @@ def initialize_user_window():
         return userDriver
     except Exception as e:
             print(f"Exception:{e} occured, unable to initialize user window")
-
+            pass
 
 def initialize_admin_window():
     try:
@@ -82,8 +85,8 @@ def initialize_admin_window():
         return adminDriver
     except Exception as e:
         print(f"Exception:{e} occured, unable to initialize admin window")
-        input("press enter to exit")
-
+        #input("press enter to exit")
+        pass
 
 def initialize_driver():
     try:
@@ -104,8 +107,8 @@ def initialize_driver():
 
     except Exception as e:
         print(f"Exception:{e} occured, unable to initialize chrome")
-        input("press enter to exit")
-
+        #input("press enter to exit")
+        pass
 
 def user_window_to_logout(driver):
     #function modifies the user page to add a large logout button
@@ -148,7 +151,8 @@ def clear_all_tables(driver, fullUserEmail):
         #handles element not found and every other type of error
         except Exception as e:
             print(f"unable to remove {xpath} because {e}")
-            input("press enter to exit")
+            #input("press enter to exit")
+            pass
 
 
     #uses helper function to clear each queue table     
@@ -194,8 +198,8 @@ def wipe_page(driver):
         print(f"unable to wipe page for driver: {driver} error:{e} ")
 
 #optional key arguments for testing
-def main(adminkeys = [], studentKeys = []):
-    print("welcome to the Full User Print Application")
+def main(adminkeys = {"username":"gr-fisprototypinglab@wpi.edu"}, studentKeys = []):
+    print("welcome to the Full User Print Application V2.2")
     adminDriver = initialize_admin_window()
     userDriver = initialize_user_window()
     #navigate to the prints page in the admin window
@@ -203,7 +207,7 @@ def main(adminkeys = [], studentKeys = []):
     #wait for user authentication
     adminUsernameandDriver = user_auth_check(adminDriver, "Admin Login",adminkeys)    
     #breakout a get username Function Here
-    input("press enter to exit")
+    #input("press enter to exit")
     while True:
         try:
             usernameandDriver = user_auth_check(userDriver, "Student Login", studentKeys)
@@ -215,7 +219,9 @@ def main(adminkeys = [], studentKeys = []):
             usernameandDriver[0] = await_logout(usernameandDriver[0])
             wipe_page(adminUsernameandDriver[0])
         except: 
-            print("program closed. Please restart")
+            print("chrome window closed. Please restart the program")
+            input("press enter to exit")
+            sys.exit(0)
     input("press enter to exit")
 
 if __name__ == "__main__":
