@@ -31,13 +31,13 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\typing.py',
    'PYMODULE'),
-  ('stringprep',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\stringprep.py',
-   'PYMODULE'),
   ('tracemalloc',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\tracemalloc.py',
+   'PYMODULE'),
+  ('stringprep',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\stringprep.py',
    'PYMODULE'),
   ('_py_abc',
    'C:\\Program '
@@ -58,10 +58,6 @@
   ('inspect',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\inspect.py',
-   'PYMODULE'),
-  ('os',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\os.py',
    'PYMODULE'),
   ('cmd',
    'C:\\Program '
@@ -199,14 +195,6 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\platform.py',
    'PYMODULE'),
-  ('token',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\token.py',
-   'PYMODULE'),
-  ('tokenize',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\tokenize.py',
-   'PYMODULE'),
   ('urllib.parse',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\urllib\\parse.py',
@@ -214,10 +202,6 @@
   ('tempfile',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\tempfile.py',
-   'PYMODULE'),
-  ('subprocess',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\subprocess.py',
    'PYMODULE'),
   ('tty',
    'C:\\Program '
@@ -411,10 +395,6 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\shutil.py',
    'PYMODULE'),
-  ('selectors',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\selectors.py',
-   'PYMODULE'),
   ('socket',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\socket.py',
@@ -447,10 +427,6 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\string.py',
    'PYMODULE'),
-  ('_threading_local',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\_threading_local.py',
-   'PYMODULE'),
   ('_compat_pickle',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\_compat_pickle.py',
@@ -467,10 +443,6 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\pprint.py',
    'PYMODULE'),
-  ('contextlib',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\contextlib.py',
-   'PYMODULE'),
   ('unittest.case',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\unittest\\case.py',
@@ -478,18 +450,6 @@
   ('unittest.suite',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\unittest\\suite.py',
-   'PYMODULE'),
-  ('stat',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\stat.py',
-   'PYMODULE'),
-  ('genericpath',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\genericpath.py',
-   'PYMODULE'),
-  ('posixpath',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\posixpath.py',
    'PYMODULE'),
   ('fnmatch',
    'C:\\Program '
@@ -507,10 +467,6 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\unittest\\main.py',
    'PYMODULE'),
-  ('signal',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\signal.py',
-   'PYMODULE'),
   ('unittest.signals',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\unittest\\signals.py',
@@ -518,6 +474,50 @@
   ('unittest',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\unittest\\__init__.py',
+   'PYMODULE'),
+  ('doctest',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\doctest.py',
+   'PYMODULE'),
+  ('stat',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\stat.py',
+   'PYMODULE'),
+  ('genericpath',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\genericpath.py',
+   'PYMODULE'),
+  ('posixpath',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\posixpath.py',
+   'PYMODULE'),
+  ('signal',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\signal.py',
+   'PYMODULE'),
+  ('contextlib',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\contextlib.py',
+   'PYMODULE'),
+  ('_threading_local',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\_threading_local.py',
+   'PYMODULE'),
+  ('selectors',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\selectors.py',
+   'PYMODULE'),
+  ('subprocess',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\subprocess.py',
+   'PYMODULE'),
+  ('os',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\os.py',
+   'PYMODULE'),
+  ('token',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\token.py',
    'PYMODULE'),
   ('struct',
    'C:\\Program '
@@ -539,9 +539,9 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\argparse.py',
    'PYMODULE'),
-  ('doctest',
+  ('tokenize',
    'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\doctest.py',
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\tokenize.py',
    'PYMODULE'),
   ('threading',
    'C:\\Program '
@@ -1300,10 +1300,6 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\DLLs\\_hashlib.pyd',
    'EXTENSION'),
-  ('select',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\DLLs\\select.pyd',
-   'EXTENSION'),
   ('_bz2',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\DLLs\\_bz2.pyd',
@@ -1315,6 +1311,10 @@
   ('_socket',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\DLLs\\_socket.pyd',
+   'EXTENSION'),
+  ('select',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\DLLs\\select.pyd',
    'EXTENSION'),
   ('_ctypes',
    'C:\\Program '
@@ -1328,32 +1328,32 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\DLLs\\_elementtree.pyd',
    'EXTENSION'),
-  ('libcrypto-1_1.dll',
+  ('VCRUNTIME140.dll',
    'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\DLLs\\libcrypto-1_1.dll',
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\vcruntime140.dll',
    'BINARY'),
   ('python37.dll',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\python37.dll',
    'BINARY'),
+  ('libcrypto-1_1.dll',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\DLLs\\libcrypto-1_1.dll',
+   'BINARY'),
   ('libssl-1_1.dll',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\DLLs\\libssl-1_1.dll',
-   'BINARY'),
-  ('VCRUNTIME140.dll',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\vcruntime140.dll',
    'BINARY')],
  [],
  [],
  [('base_library.zip',
    'C:\\Users\\eth22\\Documents\\GitHub\\3D-Print-Lab-Full-User-Print-Application--Python-\\app\\build\\two_chrome_window\\base_library.zip',
    'DATA'),
-  ('selenium\\webdriver\\firefox\\amd64\\x_ignore_nofocus.so',
-   'c:\\users\\eth22\\documents\\github\\3d-print-lab-full-user-print-application--python-\\env\\lib\\site-packages\\selenium\\webdriver\\firefox\\amd64\\x_ignore_nofocus.so',
-   'DATA'),
   ('selenium\\webdriver\\remote\\getAttribute.js',
    'c:\\users\\eth22\\documents\\github\\3d-print-lab-full-user-print-application--python-\\env\\lib\\site-packages\\selenium\\webdriver\\remote\\getAttribute.js',
+   'DATA'),
+  ('selenium\\webdriver\\firefox\\x86\\x_ignore_nofocus.so',
+   'c:\\users\\eth22\\documents\\github\\3d-print-lab-full-user-print-application--python-\\env\\lib\\site-packages\\selenium\\webdriver\\firefox\\x86\\x_ignore_nofocus.so',
    'DATA'),
   ('selenium\\webdriver\\firefox\\webdriver_prefs.json',
    'c:\\users\\eth22\\documents\\github\\3d-print-lab-full-user-print-application--python-\\env\\lib\\site-packages\\selenium\\webdriver\\firefox\\webdriver_prefs.json',
@@ -1361,13 +1361,13 @@
   ('selenium\\webdriver\\firefox\\webdriver.xpi',
    'c:\\users\\eth22\\documents\\github\\3d-print-lab-full-user-print-application--python-\\env\\lib\\site-packages\\selenium\\webdriver\\firefox\\webdriver.xpi',
    'DATA'),
-  ('selenium\\webdriver\\firefox\\x86\\x_ignore_nofocus.so',
-   'c:\\users\\eth22\\documents\\github\\3d-print-lab-full-user-print-application--python-\\env\\lib\\site-packages\\selenium\\webdriver\\firefox\\x86\\x_ignore_nofocus.so',
+  ('certifi\\cacert.pem',
+   'c:\\users\\eth22\\documents\\github\\3d-print-lab-full-user-print-application--python-\\env\\lib\\site-packages\\certifi\\cacert.pem',
+   'DATA'),
+  ('selenium\\webdriver\\firefox\\amd64\\x_ignore_nofocus.so',
+   'c:\\users\\eth22\\documents\\github\\3d-print-lab-full-user-print-application--python-\\env\\lib\\site-packages\\selenium\\webdriver\\firefox\\amd64\\x_ignore_nofocus.so',
    'DATA'),
   ('selenium\\webdriver\\remote\\isDisplayed.js',
    'c:\\users\\eth22\\documents\\github\\3d-print-lab-full-user-print-application--python-\\env\\lib\\site-packages\\selenium\\webdriver\\remote\\isDisplayed.js',
-   'DATA'),
-  ('certifi\\cacert.pem',
-   'c:\\users\\eth22\\documents\\github\\3d-print-lab-full-user-print-application--python-\\env\\lib\\site-packages\\certifi\\cacert.pem',
    'DATA')],
  [])

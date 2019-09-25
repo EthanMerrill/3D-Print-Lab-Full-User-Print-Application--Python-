@@ -3,7 +3,7 @@
 block_cipher = None
 
 
-a = Analysis(['app\\two_chrome_window.py'],
+a = Analysis(['two_chrome_window.py'],
              pathex=['C:\\Users\\eth22\\Documents\\GitHub\\3D-Print-Lab-Full-User-Print-Application--Python-'],
              binaries=[],
              datas=[],

@@ -8,12 +8,11 @@ import json
 import getpass
 import time
 import threading
-#native python library
+# native python library
 import ctypes
-#non-native library
-import pymsgbox
+# non-native library
 
-#import globals
+# import globals
 
 # ##Will put chrome driver in the path automatically in the future
 # if getattr(sys, 'frozen', False) :
@@ -23,67 +22,65 @@ import pymsgbox
 
 def user_auth_check(driver, customText):
     
-        #Opens 3dpos login page, checks for login success, scrapes and returns username 
+    # Opens 3dpos login page, checks for login success, scrapes and returns username
         
-        #goto the 3dprinteros page
-        driver.get('https://cloud.3dprinteros.com/printing/')
-        #insert a the passed label into the page so the user knows that this is the user or admin login
-        #get the logo element
-        try :
-            logoElement = driver.find_element_by_xpath("//*[@id='wrapper']/a/h1")
-        except: 
-            logoElement = driver.find_element_by_xpath("//*[@id='menuitem_user']/a") 
-        else: print("logo not found")
-        #executes javascript which modifies the page to place the passed label on the login page
-        driver.execute_script (
-            """
-            arguments[0].setAttribute('class','label');
-            arguments[0].setAttribute('style', 'font: 50px arial');
-            arguments[0].innerHTML = arguments[1];""", logoElement, customText
-        )
-        #
-
-        #a loop which checks to see if the user has logged and and been directed to the prints page
-        #if so, scrape the userID from the page
-        while True:
-            if driver.current_url == 'https://cloud.3dprinteros.com/myfiles/#':
-                usernameElement = driver.find_element_by_xpath("//*[@id='menuitem_user']/a")
-                username = usernameElement.get_attribute('innerText')
-                #driver.quit
-                usernameAndDriver = [driver, username]
-                return usernameAndDriver
+    # goto the 3dprinteros page
+    driver.get('https://cloud.3dprinteros.com/printing/')
+    # insert a the passed label into the page so the user knows that this is the user or admin login
+    # get the logo element
+    try :
+        logoElement = driver.find_element_by_xpath("//*[@id='wrapper']/a/h1")
+    except:
+        logoElement = driver.find_element_by_xpath("//*[@id='menuitem_user']/a")
+    else: print("logo not found")
+    # executes javascript which modifies the page to place the passed label on the login page
+    driver.execute_script (
+        """
+        arguments[0].setAttribute('class','label');
+        arguments[0].setAttribute('style', 'font: 50px arial');
+        arguments[0].innerHTML = arguments[1];""", logoElement, customText
+    )
+    # a loop which checks to see if the user has logged and and been directed to the prints page
+    # if so, scrape the userID from the page
+    while True:
+        if driver.current_url == 'https://cloud.3dprinteros.com/myfiles/#':
+            usernameElement = driver.find_element_by_xpath("//*[@id='menuitem_user']/a")
+            username = usernameElement.get_attribute('innerText')
+            #driver.quit
+            usernameAndDriver = [driver, username]
+            return usernameAndDriver
 
             
-#set default value of load photos to false
+# set default value of load photos to false
 def initializeListener(loadPhotos = True):
     chrome_options = Options()
-    #chrome_options.add_argument("--headless")
+    # chrome_options.add_argument("--headless")
     chrome_options.add_argument("--disable-gpu")
-    #disables most logging
+    # disables most logging
     chrome_options.add_argument("--log-level=3")
     chrome_options.add_argument("--allow-running-insecure-content")
     chrome_options.add_argument("--remote-debugging-port=9222") #http://localhost:9222
 
-    #if specified, do not load images
+    # if specified, do not load images
     if loadPhotos == False:
         prefs = {"profile.managed_default_content_settings.images": 2}
         chrome_options.add_experimental_option("prefs", prefs)
-    #chrome_options.setPageLoadStrategy(PageLoadStrategy.NONE)
+    # chrome_options.setPageLoadStrategy(PageLoadStrategy.NONE)
     driver = webdriver.Chrome(options=chrome_options)
     driver.minimize_window()
-    #these might be useful for inserting into an sql table later
-    #tazTable = driver.find_element(By.XPATH, "//*[@id='id_box_51246']/span/table")
-    #ultiTable = driver.find_element(By.XPATH, "//*[@id='id_box_51247']/span/table")
-    #print("Taz 6 Queue" +tazTable.text +"/n Ultimaker Table /n" +ultiTable.text)
+    # these might be useful for inserting into an sql table later
+    # tazTable = driver.find_element(By.XPATH, "//*[@id='id_box_51246']/span/table")
+    # ultiTable = driver.find_element(By.XPATH, "//*[@id='id_box_51247']/span/table")
+    # print("Taz 6 Queue" +tazTable.text +"/n Ultimaker Table /n" +ultiTable.text)
     return driver
 
 
 def admin_login():
-    #this is another thread which runs in parallel
+    # this is another thread which runs in parallel
     adminDriver = initializeListener(False)
     
     adminUsername = "GR-FISPROTOTYPINGLAB@WPI.EDU"
-    #loop to ensure login can continue after another user accidentally logs in
+    # loop to ensure login can continue after another user accidentally logs in
     while True:
         usernameAndDriver = user_auth_check(adminDriver, "Admin Login")
         if adminUsername == usernameAndDriver[1]:
