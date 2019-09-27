@@ -127,12 +127,12 @@ def table_filter( driver, xpath, fullUserEmail):
     except:
         print("table Not Found")
         return driver
-    #print (tazTable[0].text)
+    # print (tazTable[0].text)
     for element in allTableElements:
         #add an if not in statement here to filter 
         if fullUserEmail not in element.text: 
-            #####print(f"element: {element.text} not removed from page")
-            #print (f"{element.text} removed from page")
+            ##### print(f"element: {element.text} not removed from page")
+            # print (f"{element.text} removed from page")
             driver.execute_script(
                 "arguments[0].remove();", element
             )

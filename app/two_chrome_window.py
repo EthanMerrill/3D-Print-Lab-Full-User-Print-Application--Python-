@@ -136,12 +136,16 @@ def clear_all_tables(driver, fullUserEmail):
     driver.get("https://cloud.3dprinteros.com/printing/")
     #make a list of elements to remove from the page (headers)
     oneTimeRemoveElements = [
-        "//*[@id='host_id_18233']", "//*[@id='id_box_49258']", '//*[@id="id_box_45971"]',
+        "//*[@id='host_id_18233']", 
+        "//*[@id='id_box_49258']", 
+        '//*[@id="id_box_45971"]',
         "//*[@id='host_id_22576']", 
         "//*[@id='header']", 
         "//*[@id='cookieMess']", 
         "//*[@id='noChromeMess']"] 
     #iterate through the list and remove each element sequentially
+    #wait for the page to load for a sec
+    time.sleep(1.5)
     for xpath in oneTimeRemoveElements:
         try:
             element = driver.find_element_by_xpath(xpath)
@@ -155,24 +159,43 @@ def clear_all_tables(driver, fullUserEmail):
             pass
 
 
-    #uses helper function to clear each queue table     
-    table_filter(driver, '//*[@id="id_box_45971"]/span/table/tbody', fullUserEmail)
-    table_filter(driver, '//*[@id="id_box_51246"]/span/table/tbody', fullUserEmail)
-    table_filter(driver, '//*[@id="id_box_59968"]/span/table/tbody', fullUserEmail)
-    table_filter(driver, '//*[@id="id_box_51247"]/span/table/tbody', fullUserEmail) 
+    # uses helper function to clear each queue table     
+    # table_filter(driver, '//*[@id="id_box_45971"]/span/table/tbody', fullUserEmail)
+    # table_filter(driver, '//*[@id="id_box_51246"]/span/table/tbody', fullUserEmail)
+    # table_filter(driver, '//*[@id="id_box_59968"]/span/table/tbody', fullUserEmail)
+    # table_filter(driver, '//*[@id="id_box_51247"]/span/table/tbody', fullUserEmail) 
 
-    driver = table_filter(driver, '//*[@id="id_box_59967"]/span/table/tbody', fullUserEmail)
+    # driver = table_filter(driver, '//*[@id="id_box_59967"]/span/table/tbody', fullUserEmail)
+
+    #EXPIREMENTAL:
+    driver = page_filter(driver, fullUserEmail)
 
     return driver 
 
-def table_filter(driver, xpath, fullUserEmail):
+# A new way to clear all tables. Searches every div that looks like a table and clears everything except the username which is passed
+def page_filter(driver, fullUserEmail): 
+    try:
+        # tableContainer = driver.find_elements_by_xpath('//*[@id="printingActiveContainer"]')
+        allQueueTables = driver.find_elements_by_xpath(".//div[contains(@id,'host_id')]")
+        for element in allQueueTables:
+            table_filter(driver, fullUserEmail,"", element)
+        return driver     
+    except Exception as e:
+        print(f"error in function page_filter: {e}")
+        return driver        
+
+def table_filter(driver, fullUserEmail, xpath = "", element = ""):
     #taz xpath table://*[@id="id_box_51246"]/span/table/tbody
     #taz paid jobs table: //*[@id="id_box_59968"]/span/table/tbody
     #ultimaker xpath table: //*[@id="id_box_51247"]/span/table/tbody
     #ultimaker paid jobs table: //*[@id="id_box_59967"]/span/table/tbody
-    queueTable = driver.find_elements_by_xpath(xpath)
+    if element == "":
+        queueTable = driver.find_elements_by_xpath(xpath)
+    elif xpath == "":
+        queueTable = element
+
     try:
-        allTableElements = queueTable[0].find_elements_by_xpath(".//tr[contains(@id,'job_box')]")
+        allTableElements = queueTable.find_elements_by_xpath(".//tr[contains(@id,'job_box')]")
     except:
         print(f"table '{xpath}' Not Found")
         return driver
@@ -220,9 +243,9 @@ def main(adminkeys = {"username":"gr-fisprototypinglab@wpi.edu"}, studentKeys = 
             wipe_page(adminUsernameandDriver[0])
         except: 
             print("chrome window closed. Please restart the program")
-            input("press enter to exit")
+            #input("press enter to exit")
             sys.exit(0)
-    input("press enter to exit")
+    #input("press enter to exit")
 
 if __name__ == "__main__":
     main()

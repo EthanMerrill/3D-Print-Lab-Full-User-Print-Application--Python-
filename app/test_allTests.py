@@ -14,5 +14,14 @@ class Test_TestMain(unittest.TestCase):
 
         assert True == True
 
+    def test_page_removal(self):
+        with open("app\keys.json", "r") as read_file:
+            keys = json.load(read_file)
+        adminKeys = keys["adminKeys"]
+        driver = two_chrome_window.initialize_admin_window()
+        two_chrome_window.user_auth_check(driver, "PAGE EDIT TEST", adminKeys)
+        two_chrome_window.clear_all_tables(driver, "mjadiletta@wpi.edu")
+        time.sleep(10)
+
 if __name__ == '__main__':
     unittest.main()
