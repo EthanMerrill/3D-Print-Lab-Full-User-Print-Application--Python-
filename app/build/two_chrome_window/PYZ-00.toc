@@ -15,17 +15,25 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\typing.py',
    'PYMODULE'),
-  ('tracemalloc',
+  ('_py_abc',
    'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\tracemalloc.py',
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\_py_abc.py',
    'PYMODULE'),
   ('stringprep',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\stringprep.py',
    'PYMODULE'),
-  ('_py_abc',
+  ('fnmatch',
    'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\_py_abc.py',
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\fnmatch.py',
+   'PYMODULE'),
+  ('struct',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\struct.py',
+   'PYMODULE'),
+  ('_compat_pickle',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\_compat_pickle.py',
    'PYMODULE'),
   ('__future__',
    'C:\\Program '
@@ -178,6 +186,14 @@
   ('platform',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\platform.py',
+   'PYMODULE'),
+  ('token',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\token.py',
+   'PYMODULE'),
+  ('tokenize',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\tokenize.py',
    'PYMODULE'),
   ('urllib.parse',
    'C:\\Program '
@@ -411,21 +427,9 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\string.py',
    'PYMODULE'),
-  ('_compat_pickle',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\_compat_pickle.py',
-   'PYMODULE'),
-  ('pickle',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\pickle.py',
-   'PYMODULE'),
   ('logging',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\logging\\__init__.py',
-   'PYMODULE'),
-  ('pprint',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\pprint.py',
    'PYMODULE'),
   ('unittest.case',
    'C:\\Program '
@@ -434,10 +438,6 @@
   ('unittest.suite',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\unittest\\suite.py',
-   'PYMODULE'),
-  ('fnmatch',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\fnmatch.py',
    'PYMODULE'),
   ('unittest.loader',
    'C:\\Program '
@@ -499,14 +499,6 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\os.py',
    'PYMODULE'),
-  ('token',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\token.py',
-   'PYMODULE'),
-  ('struct',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\struct.py',
-   'PYMODULE'),
   ('gettext',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\gettext.py',
@@ -523,9 +515,17 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\argparse.py',
    'PYMODULE'),
-  ('tokenize',
+  ('pprint',
    'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\tokenize.py',
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\pprint.py',
+   'PYMODULE'),
+  ('pickle',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\pickle.py',
+   'PYMODULE'),
+  ('tracemalloc',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\tracemalloc.py',
    'PYMODULE'),
   ('threading',
    'C:\\Program '

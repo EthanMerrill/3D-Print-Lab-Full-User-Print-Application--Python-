@@ -222,7 +222,7 @@ def wipe_page(driver):
 
 #optional key arguments for testing
 def main(adminkeys = {"username":"gr-fisprototypinglab@wpi.edu"}, studentKeys = []):
-    print("welcome to the Full User Print Application V2.2")
+    print("Welcome to the Full User Print Application V2.4")
     adminDriver = initialize_admin_window()
     userDriver = initialize_user_window()
     #navigate to the prints page in the admin window

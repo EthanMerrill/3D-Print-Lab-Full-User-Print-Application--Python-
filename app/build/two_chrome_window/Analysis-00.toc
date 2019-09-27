@@ -31,17 +31,25 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\typing.py',
    'PYMODULE'),
-  ('tracemalloc',
+  ('_py_abc',
    'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\tracemalloc.py',
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\_py_abc.py',
    'PYMODULE'),
   ('stringprep',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\stringprep.py',
    'PYMODULE'),
-  ('_py_abc',
+  ('fnmatch',
    'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\_py_abc.py',
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\fnmatch.py',
+   'PYMODULE'),
+  ('struct',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\struct.py',
+   'PYMODULE'),
+  ('_compat_pickle',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\_compat_pickle.py',
    'PYMODULE'),
   ('__future__',
    'C:\\Program '
@@ -194,6 +202,14 @@
   ('platform',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\platform.py',
+   'PYMODULE'),
+  ('token',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\token.py',
+   'PYMODULE'),
+  ('tokenize',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\tokenize.py',
    'PYMODULE'),
   ('urllib.parse',
    'C:\\Program '
@@ -427,21 +443,9 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\string.py',
    'PYMODULE'),
-  ('_compat_pickle',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\_compat_pickle.py',
-   'PYMODULE'),
-  ('pickle',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\pickle.py',
-   'PYMODULE'),
   ('logging',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\logging\\__init__.py',
-   'PYMODULE'),
-  ('pprint',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\pprint.py',
    'PYMODULE'),
   ('unittest.case',
    'C:\\Program '
@@ -450,10 +454,6 @@
   ('unittest.suite',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\unittest\\suite.py',
-   'PYMODULE'),
-  ('fnmatch',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\fnmatch.py',
    'PYMODULE'),
   ('unittest.loader',
    'C:\\Program '
@@ -515,14 +515,6 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\os.py',
    'PYMODULE'),
-  ('token',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\token.py',
-   'PYMODULE'),
-  ('struct',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\struct.py',
-   'PYMODULE'),
   ('gettext',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\gettext.py',
@@ -539,9 +531,17 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\argparse.py',
    'PYMODULE'),
-  ('tokenize',
+  ('pprint',
    'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\tokenize.py',
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\pprint.py',
+   'PYMODULE'),
+  ('pickle',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\pickle.py',
+   'PYMODULE'),
+  ('tracemalloc',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\lib\\tracemalloc.py',
    'PYMODULE'),
   ('threading',
    'C:\\Program '
@@ -1328,10 +1328,6 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\DLLs\\_elementtree.pyd',
    'EXTENSION'),
-  ('VCRUNTIME140.dll',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\vcruntime140.dll',
-   'BINARY'),
   ('python37.dll',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\python37.dll',
@@ -1343,31 +1339,35 @@
   ('libssl-1_1.dll',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\DLLs\\libssl-1_1.dll',
+   'BINARY'),
+  ('VCRUNTIME140.dll',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.7_3.7.1264.0_x64__qbz5n2kfra8p0\\vcruntime140.dll',
    'BINARY')],
  [],
  [],
  [('base_library.zip',
    'C:\\Users\\eth22\\Documents\\GitHub\\3D-Print-Lab-Full-User-Print-Application--Python-\\app\\build\\two_chrome_window\\base_library.zip',
    'DATA'),
-  ('selenium\\webdriver\\remote\\getAttribute.js',
-   'c:\\users\\eth22\\documents\\github\\3d-print-lab-full-user-print-application--python-\\env\\lib\\site-packages\\selenium\\webdriver\\remote\\getAttribute.js',
-   'DATA'),
-  ('selenium\\webdriver\\firefox\\x86\\x_ignore_nofocus.so',
-   'c:\\users\\eth22\\documents\\github\\3d-print-lab-full-user-print-application--python-\\env\\lib\\site-packages\\selenium\\webdriver\\firefox\\x86\\x_ignore_nofocus.so',
-   'DATA'),
-  ('selenium\\webdriver\\firefox\\webdriver_prefs.json',
-   'c:\\users\\eth22\\documents\\github\\3d-print-lab-full-user-print-application--python-\\env\\lib\\site-packages\\selenium\\webdriver\\firefox\\webdriver_prefs.json',
+  ('certifi\\cacert.pem',
+   'c:\\users\\eth22\\documents\\github\\3d-print-lab-full-user-print-application--python-\\env\\lib\\site-packages\\certifi\\cacert.pem',
    'DATA'),
   ('selenium\\webdriver\\firefox\\webdriver.xpi',
    'c:\\users\\eth22\\documents\\github\\3d-print-lab-full-user-print-application--python-\\env\\lib\\site-packages\\selenium\\webdriver\\firefox\\webdriver.xpi',
    'DATA'),
-  ('certifi\\cacert.pem',
-   'c:\\users\\eth22\\documents\\github\\3d-print-lab-full-user-print-application--python-\\env\\lib\\site-packages\\certifi\\cacert.pem',
+  ('selenium\\webdriver\\remote\\isDisplayed.js',
+   'c:\\users\\eth22\\documents\\github\\3d-print-lab-full-user-print-application--python-\\env\\lib\\site-packages\\selenium\\webdriver\\remote\\isDisplayed.js',
+   'DATA'),
+  ('selenium\\webdriver\\firefox\\x86\\x_ignore_nofocus.so',
+   'c:\\users\\eth22\\documents\\github\\3d-print-lab-full-user-print-application--python-\\env\\lib\\site-packages\\selenium\\webdriver\\firefox\\x86\\x_ignore_nofocus.so',
+   'DATA'),
+  ('selenium\\webdriver\\remote\\getAttribute.js',
+   'c:\\users\\eth22\\documents\\github\\3d-print-lab-full-user-print-application--python-\\env\\lib\\site-packages\\selenium\\webdriver\\remote\\getAttribute.js',
+   'DATA'),
+  ('selenium\\webdriver\\firefox\\webdriver_prefs.json',
+   'c:\\users\\eth22\\documents\\github\\3d-print-lab-full-user-print-application--python-\\env\\lib\\site-packages\\selenium\\webdriver\\firefox\\webdriver_prefs.json',
    'DATA'),
   ('selenium\\webdriver\\firefox\\amd64\\x_ignore_nofocus.so',
    'c:\\users\\eth22\\documents\\github\\3d-print-lab-full-user-print-application--python-\\env\\lib\\site-packages\\selenium\\webdriver\\firefox\\amd64\\x_ignore_nofocus.so',
-   'DATA'),
-  ('selenium\\webdriver\\remote\\isDisplayed.js',
-   'c:\\users\\eth22\\documents\\github\\3d-print-lab-full-user-print-application--python-\\env\\lib\\site-packages\\selenium\\webdriver\\remote\\isDisplayed.js',
    'DATA')],
  [])
