@@ -222,13 +222,21 @@ def wipe_page(driver):
 
 #optional key arguments for testing
 def main(adminkeys = {"username":"gr-fisprototypinglab@wpi.edu"}, studentKeys = []):
+
+    with open("app\keys.json", "r") as read_file:
+        keys = json.load(read_file)
+    adminkeys = keys["adminKeys"]
     print("Welcome to the Full User Print Application V2.4")
     adminDriver = initialize_admin_window()
     userDriver = initialize_user_window()
     #navigate to the prints page in the admin window
     adminDriver.get("https://cloud.3dprinteros.com/printing/")
     #wait for user authentication
-    adminUsernameandDriver = user_auth_check(adminDriver, "Admin Login",adminkeys)    
+    adminUsernameandDriver = user_auth_check(adminDriver, "Admin Login",adminkeys)
+    ## + add a button click on the admin sign in
+
+
+    wipe_page(adminUsernameandDriver[0])
     #breakout a get username Function Here
     #input("press enter to exit")
     while True:
