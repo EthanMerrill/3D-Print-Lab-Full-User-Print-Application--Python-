@@ -21,16 +21,23 @@ def user_auth_check(driver, customText, credentialsArray = []):
     #insert a the passed label into the page so the user knows that this is the user or admin login
     #get the logo element
     try :
-        logoElement = driver.find_element_by_xpath("//*[@id='wrapper']/a/h1")
-    except: 
-        logoElement = driver.find_element_by_xpath("//*[@id='menuitem_user']/a") 
-    else: print("logo not found")
+        logoElement = driver.find_element_by_xpath('/html/body/div[3]/div/div[1]')
+    except Exception as e:
+        print(f"Exception:{e} occured, unable to locate logo element to append label to")
+        pass
+        
     #executes javascript which modifies the page to place the passed label on the login page
     driver.execute_script (
         """
+        //create new div
+        var newDiv = document.createElement('div');
+        //set the id and content
+        newDiv.id = "div";
+        arguments[0].appendChild(newDiv);
         arguments[0].setAttribute('class','label');
         arguments[0].setAttribute('style', 'font: 50px arial');
-        arguments[0].innerHTML = arguments[1];""", logoElement, customText
+        arguments[0].innerHTML = arguments[1];
+        """, logoElement, customText
     )
     #automate field filling for testing purposes
     try:
@@ -69,7 +76,7 @@ def initialize_user_window():
     try: 
         userDriver = initialize_driver()
         #size and position the window appropriately
-        userDriver.set_window_size(300,1030)
+        userDriver.set_window_size(300,1050)
         userDriver.set_window_position(0,0)
         return userDriver
     except Exception as e:
@@ -80,7 +87,7 @@ def initialize_admin_window():
     try:
         adminDriver = initialize_driver()
         #size and position the window appropriately
-        adminDriver.set_window_size(1420,1030)
+        adminDriver.set_window_size(1420,1050)
         adminDriver.set_window_position(501,0)
         return adminDriver
     except Exception as e:
@@ -119,12 +126,6 @@ var newDiv = document.createElement('div');
 newDiv.id = "button";
 newDiv.onclick = () => { window.location = "https://cloud.3dprinteros.com/logout/" }
 newDiv.innerHTML = '<button class="btn">Log Out</button>';
-//newDiv.setAttribute = 
-//newDiv.appendChild(newContent)
-
-//var sp2 = document.getElementById("main-block");
-//let a = document.getElementsByTagName("script")[0]
-//console.log(a);
 document.body.innerHTML = "";
 document.body.appendChild(newDiv);
         """
@@ -182,8 +183,9 @@ def page_filter(driver, fullUserEmail):
         return driver     
     except Exception as e:
         print(f"error in function page_filter: {e}")
-        return driver        
+        return driver    
 
+# Filters specific print queues.
 def table_filter(driver, fullUserEmail, xpath = "", element = ""):
     #taz xpath table://*[@id="id_box_51246"]/span/table/tbody
     #taz paid jobs table: //*[@id="id_box_59968"]/span/table/tbody
@@ -209,7 +211,7 @@ def table_filter(driver, fullUserEmail, xpath = "", element = ""):
                 "arguments[0].remove();", element
             )
     return driver
-
+# wipes the entire webpage of all elements. Currently used so that the previous users data is not persistent
 def wipe_page(driver):
     try:
         driver.execute_script(

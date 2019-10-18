@@ -14,3 +14,7 @@ Hide Admin Login :heavy_check_mark:
 - optimize for speed
 - Add a Flask UI
 - Organize/Comment thoroughly
+
+#### Change Log
+
+##### V2.5
