@@ -225,11 +225,16 @@ def wipe_page(driver):
 
 #optional key arguments for testing
 def main(adminkeys = {"username":"gr-fisprototypinglab@wpi.edu"}, studentKeys = []):
-
-    with open("app\keys.json", "r") as read_file:
-        keys = json.load(read_file)
-    adminkeys = keys["adminKeys"]
+    
     print("Welcome to the Full User Print Application V2.5")
+    # Load the Admin Keys from the external JSON file
+    try:
+        with open("keys.json", "r") as read_file:
+            keys = json.load(read_file)
+    except Exception as e:
+        print(f"unable to load admin keys. Error: {e}")
+
+    adminkeys = keys["adminKeys"]
     adminDriver = initialize_admin_window()
     userDriver = initialize_user_window()
     #navigate to the prints page in the admin window
