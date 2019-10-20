@@ -40,13 +40,14 @@ def user_auth_check(driver, customText, credentialsArray = []):
         """, logoElement, customText
     )
     #automate field filling for testing purposes
+    #this catches all errors, if an element is not found, it will throw an error saying the username was not passed
     try:
-        driver.find_element_by_id('signinUsername').send_keys(credentialsArray["username"])
+        driver.find_element_by_name('email').send_keys(credentialsArray["username"])
     except:
         print("username not passed")
         pass
     try:
-        driver.find_element_by_id('signinPassword').send_keys(credentialsArray["password"])
+        driver.find_element_by_name('password').send_keys(credentialsArray["password"])
     except:
         print("password not passed")
         pass
@@ -58,7 +59,7 @@ def check_for_username(driver):
     #a loop which checks to see if the user has logged and and been directed to the prints page
     #if so, scrape the userID from the page
     while True:
-        if driver.current_url == 'https://cloud.3dprinteros.com/myfiles/#':
+        if driver.current_url == 'https://cloud.3dprinteros.com/myfiles':
             usernameElement = driver.find_element_by_xpath("//*[@id='menuitem_user']/a")
             username = usernameElement.get_attribute('innerText')
             usernameAndDriver = [driver, username]
@@ -68,7 +69,7 @@ def check_for_username(driver):
 def await_logout(driver):
     #function which monitors the user window until the url has changed to the login window, then continues. 
     while True:
-        if driver.current_url == 'https://cloud.3dprinteros.com/':
+        if driver.current_url == 'https://cloud.3dprinteros.com/#/':
             return driver
 
 
@@ -228,15 +229,14 @@ def main(adminkeys = {"username":"gr-fisprototypinglab@wpi.edu"}, studentKeys = 
     with open("app\keys.json", "r") as read_file:
         keys = json.load(read_file)
     adminkeys = keys["adminKeys"]
-    print("Welcome to the Full User Print Application V2.4")
+    print("Welcome to the Full User Print Application V2.5")
     adminDriver = initialize_admin_window()
     userDriver = initialize_user_window()
     #navigate to the prints page in the admin window
     adminDriver.get("https://cloud.3dprinteros.com/printing/")
     #wait for user authentication
-    adminUsernameandDriver = user_auth_check(adminDriver, "Admin Login",adminkeys)
+    adminUsernameandDriver = user_auth_check(adminDriver, "Admin Login", adminkeys)
     ## + add a button click on the admin sign in
-
 
     wipe_page(adminUsernameandDriver[0])
     #breakout a get username Function Here
